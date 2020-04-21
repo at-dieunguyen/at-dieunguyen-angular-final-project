@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="product-category">Man</h1>
+  <div class="product-list">
+    <ul *ngFor="let pro of product">
+      <li *ngIf="pro.category == 'man'">
+        <img [src]="pro.img" width="200px" height="220px" alt=""><br>
+        <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
+        <p>Price: $ {{ pro.price }}</p>
+        <i *ngIf="showFavourite" appFavorite [node]="pro" class="far fa-heart like"></i>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- <div class="flex-box">
+  <div *ngFor="let itemContent of listContent">
+    <div appFavorite [node]="itemContent" class="content">
+      transmit data to directive appFavorite (pass the click object)
+      <h2>This is Heading</h2>
+      <img src={{itemContent.img}}>
+      <p>{{itemContent.content}}</p>
+      <div class="favorite">
+        <span>{{itemContent.count}}</span>
+        <i class="far fa-heart like"></i>
+      </div>
+    </div>
+  </div>
+</div> -->

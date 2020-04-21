@@ -1,0 +1,215 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Dieu",
+      "lastName": "Nguyen Ha",
+      "email": "nhdieu998@gmail.com",
+      "password": "123",
+      "arrFavourite": [
+        14,
+        24
+      ]
+    },
+    {
+      "firstName": "Tan",
+      "lastName": "Nguyen Van",
+      "email": "nvtan@gmail.com",
+      "password": "123",
+      "arrFavouritve": [],
+      "id": 2
+    },
+    {
+      "firstName": "Thieu",
+      "lastName": "Nguyen",
+      "email": "thieunguyen@gmail.com",
+      "password": "a",
+      "arrFavouritve": [],
+      "id": 3
+    },
+    {
+      "firstName": "Nguyễn",
+      "lastName": "Hà",
+      "email": "nhdieu998@gmail.com",
+      "password": "123456",
+      "arrFavouritve": [],
+      "id": 4
+    },
+    {
+      "firstName": "Nguyễn Thị ",
+      "lastName": "Thanh Hằng",
+      "email": "thanhhang1998@gmail.com",
+      "password": "123456",
+      "arrFavouritve": [],
+      "id": 5
+    },
+    {
+      "firstName": "Diep nguyen",
+      "lastName": "Bao Long",
+      "email": "baolong@gmail.com",
+      "password": "123",
+      "arrFavouritve": [],
+      "id": 6
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "arrFavouritve": [],
+      "id": 7
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "arrFavouritve": [],
+      "id": 8
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "arrFavouritve": [],
+      "id": 9
+    },
+    {
+      "firstName": null,
+      "lastName": null,
+      "email": null,
+      "password": null,
+      "arrFavouritve": [],
+      "id": 10
+    },
+    {
+      "firstName": "bao long",
+      "lastName": "diep nguyen",
+      "email": "baolong123@gmail.com",
+      "password": "123",
+      "arrFavouritve": [],
+      "id": 11
+    },
+    {
+      "firstName": "bao long",
+      "lastName": "diep nguyen",
+      "email": "baolong123@gmail.com",
+      "password": "123",
+      "arrFavouritve": [],
+      "id": 12
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "arrFavouritve": [],
+      "id": 13
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "arrFavouritve": [],
+      "id": 14
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "arrFavouritve": [],
+      "id": 15
+    },
+    {
+      "firstName": "Nguyễn",
+      "lastName": "Hà",
+      "email": "nhdieu998@gmail.com",
+      "password": "",
+      "arrFavouritve": [],
+      "id": 16
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "arrFavouritve": [],
+      "id": 17
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "arrFavouritve": [],
+      "id": 18
+    },
+    {
+      "firstName": "Nguyễn",
+      "lastName": "Hà",
+      "email": "nhdieu998@gmail.com",
+      "password": "123",
+      "arrFavouritve": [],
+      "id": 19
+    },
+    {
+      "firstName": "Nguyễn",
+      "lastName": "Hà",
+      "email": "nhdieu998@gmail.com",
+      "password": "1212",
+      "arrFavouritve": [],
+      "id": 20
+    },
+    {
+      "firstName": "Nguyễn",
+      "lastName": "Hà",
+      "email": "nhdieu998@gmail.com",
+      "password": "12321",
+      "arrFavouritve": [],
+      "id": 21
+    },
+    {
+      "firstName": "haha",
+      "lastName": "hehe",
+      "email": "haha@gmail.com",
+      "password": "123",
+      "arrFavouritve": [],
+      "id": 22
+    },
+    {
+      "firstName": "dieu",
+      "lastName": "ha",
+      "email": "hadieu@gmail.com",
+      "password": "123",
+      "arrFavouritve": [],
+      "id": 23
+    },
+    {
+      "firstName": "Nguyễn",
+      "lastName": "Hà",
+      "email": "nhdieu998@gmail.com",
+      "password": "111",
+      "arrFavouritve": [],
+      "id": 24
+    },
+    {
+      "firstName": "Nguyễn",
+      "lastName": "Hà",
+      "email": "nhdieu998@gmail.com",
+      "password": "1111",
+      "arrFavouritve": [],
+      "id": 25
+    },
+    {
+      "firstName": "Nguyễn",
+      "lastName": "Hà",
+      "email": "nhdieu998@gmail.com",
+      "password": "123",
+      "arrFavouritve": [],
+      "id": 26
+    }
+  ]
+}

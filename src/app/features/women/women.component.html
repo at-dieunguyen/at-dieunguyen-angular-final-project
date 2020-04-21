@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="product-category">Women</h1>
+  <div class="product-list">
+    <ul *ngFor="let pro of product">
+      <li *ngIf="pro.category == 'women'">
+        <img [src]="pro.img" width="200px" height="220px" alt=""><br>
+        <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
+        <p>Price: $ {{ pro.price }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

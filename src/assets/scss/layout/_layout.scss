@@ -1,0 +1,30 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+.img-slider {
+  width: 100%;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0px;
+  border-top: 1px solid #429490;
+}
+ul {
+  width: 25%;
+  justify-content: space-between;
+  text-align: center;
+}
+.product-category {
+  font-size: 30px;
+  color: #31c7b3;
+  margin: 20px 0px;
+  // border-bottom: 1px solid;
+}
+.product-category:hover {
+  text-decoration: none;
+  color: #ff0000;
+}

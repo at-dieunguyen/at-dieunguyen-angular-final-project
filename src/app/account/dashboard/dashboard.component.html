@@ -1,5 +1,9 @@
-<p>dashboard works!</p>
-<a routerLink="/dashboard/profile">Profile</a>
-<a routerLink="/dashboard/favourite">Favourite</a>
-<button (click)="logout()">Log out</button>
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="dashboard-page">
+    <p class="dashboard-title">Welcome to your dashboard: {{User.lastName}}</p>
+    <a class="dashboard-router" routerLink="/dashboard/profile" routerLinkActive="isActive">Profile</a>
+    <a class="dashboard-router" routerLink="/dashboard/favourite" routerLinkActive="isActive">Favourite</a>
+    <router-outlet></router-outlet><br>
+    <button class="btn btn-secondary" (click)="logout()">Log out</button>
+  </div>
+</div>

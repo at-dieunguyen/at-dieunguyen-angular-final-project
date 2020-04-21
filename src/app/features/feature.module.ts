@@ -7,7 +7,6 @@ import { ManModule } from './man/man.module';
 import { ChildrenModule } from './children/children.module';
 import { DetailModule } from './detail/detail.module';
 import { HomeModule } from './home/home.module';
-import { SharedModule } from '../shared/module/shared.module';
 
 
 
@@ -21,7 +20,6 @@ import { SharedModule } from '../shared/module/shared.module';
     DetailModule,
     HomeModule,
     HttpClientModule,
-    SharedModule
   ],
   exports:[],
   providers: []

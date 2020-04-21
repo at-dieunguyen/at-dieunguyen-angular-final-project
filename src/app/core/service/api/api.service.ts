@@ -20,7 +20,10 @@ export class ApiService {
       catchError(this.handleError)
     );
   }
+  getId(id: number): Observable<any> {
+    return  this.http.get("http://localhost:3000/products/" +id)
 
+  }
   /**
   * Post api
   * @param url : path from ENDPOINT
@@ -31,16 +34,16 @@ export class ApiService {
       catchError(this.handleError)
     );
   }
-  _url = 'http://localhost:3001/users'
-  //Delete api
-  delete(ulr: string, params: any): Observable<any> {
-      return this.http.delete(ulr, params).pipe(
-        catchError(this.handleError))
-    }
-    deleteUser(id: number): Observable<void> {
-      return this.http.delete<void>(`${this._url}/${id}`).pipe(
-        catchError(this.handleError))
-    }
+  // _url = 'http://localhost:3001/users'
+  // //Delete api
+  // delete(ulr: string, params: any): Observable<any> {
+  //     return this.http.delete(ulr, params).pipe(
+  //       catchError(this.handleError))
+  //   }
+  //   deleteUser(id: number): Observable<void> {
+  //     return this.http.delete<void>(`${this._url}/${id}`).pipe(
+  //       catchError(this.handleError))
+  //   }
 
   /**
   * Put api

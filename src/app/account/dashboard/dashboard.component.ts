@@ -18,7 +18,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  get User(): any {
+    return JSON.parse(localStorage.getItem('currentUser'));
+  }
   logout() {
     this.loginService.logout();
   }

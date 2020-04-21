@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/core/service/api/api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -9,15 +9,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailComponent implements OnInit {
 
-  public product = [];
+  product = {
+    id: '',
+    name: '',
+    category:'',
+    img: '',
+    price:''
+  };
   domain = 'http://localhost:3000/products';
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.apiService.get(this.domain).subscribe(data => this.product = data);
+    const productId = +this.route.snapshot.paramMap.get('id');
+
+    this.apiService.getId(productId).subscribe(data => this.product = data);
   }
 
 }

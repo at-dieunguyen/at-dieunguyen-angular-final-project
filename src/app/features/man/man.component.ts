@@ -12,7 +12,7 @@ export class ManComponent implements OnInit {
   public product = [];
   public product2;
   domain = 'http://localhost:3000/products';
-  showFavourite= false;
+  showFavourite = false;
   constructor(
     private apiService: ApiService,
     private loginService: LoginService
@@ -21,11 +21,11 @@ export class ManComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.get(this.domain).subscribe(data => this.product = data);
     if (localStorage.getItem('currentUser')) {
-    console.log('da login');
+      // console.log('da login');
       this.showFavourite = true;
-  }
+    }
     else {
-      console.log('login not yet');
+      // console.log('login not yet');
     }
   }
 }

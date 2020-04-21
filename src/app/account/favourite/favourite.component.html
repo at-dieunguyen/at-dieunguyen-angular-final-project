@@ -1,8 +1,12 @@
-<ul *ngFor="let pro of product">
-  <li *ngIf="pro.id === arrIdUser2">
-    <img [src]="pro.img" width="200px" height="220px" alt=""><br>
-    <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
-    <p>Price: $ {{ pro.price }}</p>
-    <!-- <button (click)="remove()">Remove</button> -->
-  </li>
-</ul>
+<div class="container">
+  <div class="favourite-page">
+    <ul *ngFor="let pro of product">
+      <li *ngIf="pro.id === arrIdUser2">
+        <img [src]="pro.img" width="200px" height="220px" alt=""><br>
+        <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
+        <p>Price: $ {{ pro.price }}</p>
+        <!-- <button (click)="remove()">Remove</button> -->
+      </li>
+    </ul>
+  </div>
+</div>

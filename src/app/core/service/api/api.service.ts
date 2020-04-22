@@ -21,7 +21,7 @@ export class ApiService {
     );
   }
   getId(id: number): Observable<any> {
-    return  this.http.get("http://localhost:3000/products/" +id)
+    return this.http.get("http://localhost:3000/products/" + id)
 
   }
   /**
@@ -50,10 +50,11 @@ export class ApiService {
   * @param url : path from ENDPOINT
   * @param params : ex: {key: value}
   */
-  put(url: string, params?: any): Observable<any> {
-    return this.http.put(url, params).pipe(
-      catchError(this.handleError)
-    );
+  put(url: string, params: any) {
+    const axios = require('axios');
+    axios.put(url, params).catch(error => {
+      console.log(error);
+    });
   }
 
   /**

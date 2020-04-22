@@ -2,15 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ManRoutingModule } from './man-routing.module';
 import { ManComponent } from './man.component';
-import { FavouriteDirective } from 'src/app/shared/directive-favourite/favourite.directive';
-
+import { FavouriteDirective } from 'src/app/core/directive-favourite/favourite.directive';
 
 
 @NgModule({
   declarations: [ManComponent, FavouriteDirective],
   imports: [
     CommonModule,
-    ManRoutingModule
+    ManRoutingModule,
   ],
   exports: [ManComponent],
   bootstrap: [ManComponent]

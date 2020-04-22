@@ -9,7 +9,6 @@ import { DetailModule } from './detail/detail.module';
 import { HomeModule } from './home/home.module';
 
 
-
 @NgModule({
   declarations: [],
   imports: [

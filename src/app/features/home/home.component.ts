@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
 
   public product = [];
   domain = 'http://localhost:3000/products';
+  showFavourite = false;
 
   constructor(
     private apiService: ApiService
@@ -17,6 +18,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.get(this.domain).subscribe(data => this.product = data);
+    if (localStorage.getItem('currentUser')) {
+      // console.log('da login');
+      this.showFavourite = true;
+    }
+    else {
+      // console.log('login not yet');
+    }
   }
 
 }

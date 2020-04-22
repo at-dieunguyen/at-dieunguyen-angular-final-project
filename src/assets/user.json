@@ -7,8 +7,38 @@
       "email": "nhdieu998@gmail.com",
       "password": "123",
       "arrFavourite": [
-        14,
-        24
+        {
+          "id": 24,
+          "category": "man",
+          "name": "Man clothes 1",
+          "price": "1000",
+          "img": "https://thoitrangngaynay.com/upload/sanpham/quan-jeans-nam-nhan-goi-trai-tinh-te-788-1.jpg",
+          "favourite": true
+        },
+        {
+          "id": 27,
+          "category": "man",
+          "name": "Man clothes 1",
+          "price": "1000",
+          "img": "https://thoitrangngaynay.com/upload/sanpham/ao-khoac-kaki-nam-tui-doc-dao-761-3.jpg",
+          "favourite": true
+        },
+        {
+          "id": 26,
+          "category": "man",
+          "name": "Man clothes 1",
+          "price": "1000",
+          "img": "https://thoitrangngaynay.com/upload/sanpham/ao-thun-nam-vach-mau-nguc-doc-dao-752-1.jpg",
+          "favourite": true
+        },
+        {
+          "id": 28,
+          "category": "man",
+          "name": "Man clothes 1",
+          "price": "1000",
+          "img": "https://thoitrangngaynay.com/upload/sanpham/ao-thun-nam-vach-mau-nguc-doc-dao-752-3.jpg",
+          "favourite": true
+        }
       ]
     },
     {
@@ -50,6 +80,14 @@
       "password": "123",
       "arrFavouritve": [],
       "id": 6
+    },
+    {
+      "firstName": "Nguyễn",
+      "lastName": "Hà",
+      "email": "haha@gmail.com",
+      "password": "123",
+      "arrFavouritve": [],
+      "id": 7
     }
   ]
 }

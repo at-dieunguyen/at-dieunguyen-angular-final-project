@@ -5,7 +5,6 @@
       "name": "Women clothes 1",
       "category": "women",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-thun-nu-tre-trung-moi-766-1.jpg"
     },
     {
@@ -13,7 +12,6 @@
       "name": "Women clothes 2",
       "category": "women",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/quan-jeans-nu-theu-chu-tre-trung-769-1.jpg"
     },
     {
@@ -21,7 +19,6 @@
       "name": "Women clothes 3",
       "category": "women",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-khoac-kaki-nu-chu-in-ket-hop-phong-cach-duong-pho-618-1.jpg"
     },
     {
@@ -29,7 +26,6 @@
       "name": "Women clothes 1",
       "category": "women",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-thun-nu-in-chu-10th-sanh-dieu-496-1.jpg"
     },
     {
@@ -37,7 +33,6 @@
       "name": "Women clothes 1",
       "category": "women",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-thun-ba-lo-nu-thoi-trang-ca-tinh-762-1.jpg"
     },
     {
@@ -45,7 +40,6 @@
       "name": "Women clothes 1",
       "category": "women",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-khoac-kaki-nu-tui-truoc-ca-tinh-625-1.jpg"
     },
     {
@@ -53,7 +47,6 @@
       "name": "Women clothes 1",
       "category": "women",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-khoac-kaki-nu-tui-truoc-ca-tinh-625-3.jpg"
     },
     {
@@ -61,7 +54,6 @@
       "name": "Women clothes 1",
       "category": "women",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-khoac-nu-from-rong-ca-tinh-562-1.jpg"
     },
     {
@@ -69,7 +61,6 @@
       "category": "man",
       "name": "Man clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-khoac-kaki-nam-tui-doc-dao-761-2.jpg"
     },
     {
@@ -77,7 +68,6 @@
       "category": "man",
       "name": "Man clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/quan-jeans-nam-phong-cach-duong-pho-manh-me-794-1.jpg"
     },
     {
@@ -85,7 +75,6 @@
       "category": "man",
       "name": "Man clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/quan-jeans-nam-duong-pho-ket-hop-caro-791-1.jpg"
     },
     {
@@ -93,7 +82,6 @@
       "category": "man",
       "name": "Man clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/quan-jeans-nam-nhan-goi-trai-tinh-te-788-1.jpg"
     },
     {
@@ -101,7 +89,6 @@
       "category": "man",
       "name": "Man clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/quan-jeans-nam-tron-cao-cap-789-1.jpg"
     },
     {
@@ -109,7 +96,6 @@
       "category": "man",
       "name": "Man clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-thun-nam-vach-mau-nguc-doc-dao-752-1.jpg"
     },
     {
@@ -117,7 +103,6 @@
       "category": "man",
       "name": "Man clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-khoac-kaki-nam-tui-doc-dao-761-3.jpg"
     },
     {
@@ -125,7 +110,6 @@
       "category": "man",
       "name": "Man clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://thoitrangngaynay.com/upload/sanpham/ao-thun-nam-vach-mau-nguc-doc-dao-752-3.jpg"
     },
     {
@@ -133,7 +117,6 @@
       "category": "child",
       "name": "Child clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://cdn-ap-ec.yottaa.net/578855e22bb0ac10350002d6/www.carters.com/v~4b.52/on/demandware.static/-/Sites-Carters-Library/default/dw8823861e/content/carters/cslp/sbc/041320/KG_dresses.jpg?yocs=3a_35_"
     },
     {
@@ -141,7 +124,6 @@
       "category": "child",
       "name": "Child clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://cdn-ap-ec.yottaa.net/578855e22bb0ac10350002d6/www.carters.com/v~4b.52/on/demandware.static/-/Sites-Carters-Library/default/dw71aaab4d/content/carters/cslp/sbc/041320/TGTBKGKB_americana.jpg?yocs=3a_35_"
     },
     {
@@ -149,7 +131,6 @@
       "category": "child",
       "name": "Child clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://cdn-ap-ec.yottaa.net/578855e22bb0ac10350002d6/www.carters.com/v~4b.52/on/demandware.static/-/Sites-Carters-Library/default/dwdb5f6481/content/carters/cslp/sbc/041320/KG_shortsskirts.jpg?yocs=3a_35_"
     },
     {
@@ -157,7 +138,6 @@
       "category": "child",
       "name": "Child clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://cdn-ap-ec.yottaa.net/578855e22bb0ac10350002d6/www.carters.com/v~4b.52/on/demandware.static/-/Sites-Carters-Library/default/dw199e95d5/content/carters/cslp/sbc/041320/KB_tops.jpg?yocs=3a_35_"
     },
     {
@@ -165,7 +145,6 @@
       "category": "child",
       "name": "Child clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://cdn-ap-ec.yottaa.net/578855e22bb0ac10350002d6/www.carters.com/v~4b.52/on/demandware.static/-/Sites-Carters-Library/default/dw476f717c/content/carters/cslp/sbc/041320/KG_socksundies.jpg?yocs=3a_35_"
     },
     {
@@ -173,7 +152,6 @@
       "category": "child",
       "name": "Child clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://cdn-ap-ec.yottaa.net/578855e22bb0ac10350002d6/www.carters.com/v~4b.52/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/dwf0e61cf9/productimages/3H537510.jpg?sw=800&sh=1000&sfrm=jpg&yocs=3a_35_"
     },
     {
@@ -181,7 +159,6 @@
       "category": "child",
       "name": "Child clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://cdn-ap-ec.yottaa.net/578855e22bb0ac10350002d6/www.carters.com/v~4b.52/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/dw6171190d/productimages/3I193514.jpg?sw=800&sh=1000&sfrm=jpg&yocs=3a_35_"
     },
     {
@@ -189,7 +166,6 @@
       "category": "child",
       "name": "Child clothes 1",
       "price": "1000",
-      "favourite": false,
       "img": "https://cdn-ap-ec.yottaa.net/578855e22bb0ac10350002d6/www.carters.com/v~4b.52/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/dw5165ad93/productimages/3H495910.jpg?sw=800&sh=1000&sfrm=jpg&yocs=3a_35_"
     }
   ]

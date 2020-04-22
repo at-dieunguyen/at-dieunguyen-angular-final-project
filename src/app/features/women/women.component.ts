@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/core/service/api/api.service';
   styleUrls: ['./women.component.scss']
 })
 export class WomenComponent implements OnInit {
+  showFavourite = false;
   public product = [];
   domain = 'http://localhost:3000/products';
 
@@ -16,5 +17,10 @@ export class WomenComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.get(this.domain).subscribe(data => this.product = data);
+    if (localStorage.getItem('currentUser')) { //show item heart if logined
+      this.showFavourite = true;
+    }
+    else {
+    }
   }
 }

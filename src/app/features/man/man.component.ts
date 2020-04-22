@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/core/service/api/api.service';
-import { LoginService } from 'src/app/core/service/login/login.service';
 
 @Component({
   selector: 'app-man',
@@ -10,12 +9,11 @@ import { LoginService } from 'src/app/core/service/login/login.service';
 export class ManComponent implements OnInit {
 
   public product = [];
-  public product2;
+  public userData = [];
   domain = 'http://localhost:3000/products';
   showFavourite = false;
   constructor(
     private apiService: ApiService,
-    private loginService: LoginService
   ) { }
 
   ngOnInit(): void {

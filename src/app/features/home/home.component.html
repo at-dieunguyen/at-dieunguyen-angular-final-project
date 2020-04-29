@@ -1,31 +1,34 @@
 <div class="container">
   <a class="product-category" routerLink="/women">Women</a>
   <div class="product-list">
-    <ul *ngFor="let pro of product">
+    <ul *ngFor="let pro of product" appFavorite [node]="pro">
       <li *ngIf="pro.category == 'women' && pro.id < 15">
         <img [src]="pro.img" width="200px" height="220px" alt=""><br>
         <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
         <p>Price: $ {{ pro.price }}</p>
+        <i *ngIf="showFavourite" class="far fa-heart like" [style.color]="pro.favourite? 'red' : 'grey'"></i>
       </li>
     </ul>
   </div>
   <a class="product-category" routerLink="/man">Man</a>
   <div class="product-list">
-    <ul *ngFor="let pro of product">
+    <ul *ngFor="let pro of product" appFavorite [node]="pro">
       <li *ngIf="pro.category == 'man' && pro.id < 25">
         <img [src]="pro.img" width="200px" height="220px" alt=""><br>
         <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
         <p>Price: $ {{ pro.price }}</p>
+        <i *ngIf="showFavourite" class="far fa-heart like" [style.color]="pro.favourite ? 'red' : 'grey'"></i>
       </li>
     </ul>
   </div>
   <a class="product-category" routerLink="/children">Child</a>
   <div class="product-list">
-    <ul *ngFor="let pro of product">
+    <ul *ngFor="let pro of product" appFavorite [node]="pro">
       <li *ngIf="pro.category == 'child' && pro.id < 35">
         <img [src]="pro.img" width="200px" height="220px" alt=""><br>
         <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
         <p>Price: $ {{ pro.price }}</p>
+        <i *ngIf="showFavourite" class="far fa-heart like" [style.color]="pro.favourite ? 'red' : 'grey'"></i>
       </li>
     </ul>
   </div>

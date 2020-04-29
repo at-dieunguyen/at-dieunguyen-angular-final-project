@@ -7,6 +7,7 @@ import { LoginService } from 'src/app/core/service/login/login.service';
   providedIn: 'root'
 })
 export class DashboardGuard implements CanActivate {
+  isLogin = false;
   constructor(
     private login: LoginService,
     private router: Router
@@ -18,6 +19,10 @@ export class DashboardGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.login.isLogin;
   }
-
-
+  checkLogin() {
+    if (localStorage.getItem('currentUser')){
+      this.isLogin = true;
+    }
+    return this.isLogin;
+  }
 }

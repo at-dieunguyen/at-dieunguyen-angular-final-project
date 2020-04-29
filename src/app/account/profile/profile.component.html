@@ -1,5 +1,21 @@
-<h3>Your profile</h3>
-<p>First Name: {{ User.firstName }}</p>
-<p>Last Name: {{ User.lastName }}</p>
-<p>Email: {{ User.email }}</p>
+<div class="container">
+  <h1 class="profile-title">Your profile</h1>
+  <form class="form-profile" #form="ngForm" (ngSubmit)="onSubmitForm(form)">
+    <label for="">First Name</label>
+    <input
+      name="fName"
+      type="text"
+      class="form-control profile"
+      [ngModel]="profileUser?.firstName"
+    />
+    <label for="">Last Name</label>
+    <input
+      name="lName"
+      type="text"
+      class="form-control profile"
+      [ngModel]="profileUser?.lastName"
+    />
 
+  </form>
+  <button class="btn btn-primary">Submit</button>
+</div>

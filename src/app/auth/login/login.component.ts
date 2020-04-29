@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
 
-    this.apiService.get(this.domain).subscribe(data => {
+    this.apiService.get(this.domain,'').subscribe(data => {
       this.userData = data;
     }, err => {
       console.log(err);
@@ -66,7 +66,10 @@ export class LoginComponent implements OnInit {
         this.currentUser.id = this.userData[i]['id'];
 
         localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
-        this.loginService.isLogin =true;
+        let status = true
+        // this.loginService.isLogin =true;
+        this.loginService.changeSatusLogin(status);
+
         this.router.navigate(['/dashboard']);
       }
       else {

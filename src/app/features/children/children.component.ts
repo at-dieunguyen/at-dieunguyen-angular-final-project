@@ -6,17 +6,48 @@ import { ApiService } from 'src/app/core/service/api/api.service';
   templateUrl: './children.component.html',
   styleUrls: ['./children.component.scss']
 })
-export class ChildrenComponent implements OnInit {
+export class ChildrenComponent implements OnInit {domainUser = 'http://localhost:3001/users';
+domainProduct = 'http://localhost:3000/products';
+userData: any;
+userDataId: any;
+product: any;
+showFavourite = false;
+email = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).email : false
+constructor(
+  private apiService: ApiService
+) { }
 
-  public product = [];
-  domain = 'http://localhost:3000/products';
+ngOnInit(): void {
 
-  constructor(
-    private apiService: ApiService
-  ) { }
+  if (this.email) {
+    this.apiService.get(this.domainUser + '/?email=' + this.email).subscribe(e => {
 
-  ngOnInit(): void {
-    this.apiService.get(this.domain).subscribe(data => this.product = data);
+      this.userData = e
+      this.userDataId = this.userData[0].arrFavourite
+      console.log(this.userDataId)
+      // this.data = this.userData[0].arrFavourite;
+      this.apiService.get(this.domainProduct).subscribe(data => {
+        this.product = data;
+        console.log(this.product)
+        this.showFavourite = true;
 
+        for (let i = 0; i < this.userData[0].arrFavourite.length; i++) {
+          console.log(this.userData[0].arrFavourite[i].id)
+          for (let j = 0; j < this.product.length; j++) {
+            if (this.userData[0].arrFavourite[i].id === this.product[j].id) {
+              this.product[j].favourite = true;
+              console.log(this.product[j].favourite)
+            }
+          }
+        }
+
+      });
+    })
   }
+  else {
+    this.apiService.get(this.domainProduct).subscribe(data => this.product = data)
+    console.log(this.product)
+  }
+}
+
 }

@@ -11,7 +11,7 @@ import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,6 +22,7 @@ import { AccountModule } from './account/account.module';
     AccountModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }

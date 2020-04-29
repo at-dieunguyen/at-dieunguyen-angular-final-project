@@ -39,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    // canActivate: [DashboardGuard],
+    canActivate: [DashboardGuard],
     loadChildren: () => import('./account/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
 

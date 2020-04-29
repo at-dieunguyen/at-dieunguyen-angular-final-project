@@ -34,16 +34,6 @@ export class ApiService {
       catchError(this.handleError)
     );
   }
-  // _url = 'http://localhost:3001/users'
-  // //Delete api
-  // delete(ulr: string, params: any): Observable<any> {
-  //     return this.http.delete(ulr, params).pipe(
-  //       catchError(this.handleError))
-  //   }
-  //   deleteUser(id: number): Observable<void> {
-  //     return this.http.delete<void>(`${this._url}/${id}`).pipe(
-  //       catchError(this.handleError))
-  //   }
 
   /**
   * Put api

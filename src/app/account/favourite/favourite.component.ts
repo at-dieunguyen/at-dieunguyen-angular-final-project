@@ -7,45 +7,43 @@ import { ApiService } from 'src/app/core/service/api/api.service';
   styleUrls: ['./favourite.component.scss']
 })
 export class FavouriteComponent implements OnInit {
-@Input() id: number;
+  @Input()
+
   domainUser = 'http://localhost:3001/users';
   domainProduct = 'http://localhost:3000/products';
-  // domainProduct = '../../../assets/product2.json';
-  userLocal: [];
-  userData: [];
-  product: [];
-  arrIdProduct: any;
-  arrIdUser: any;
-  arrIdUser2= [];
-  idUser: any;
+  userData: any;
+  userDataId: any;
+  product: any;
+  showFavourite = false;
+  email = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).email : false
   constructor(
     private apiService: ApiService
   ) { }
 
   ngOnInit(): void {
 
+    if (this.email) {
+      this.apiService.get(this.domainUser + '/?email=' + this.email).subscribe(e => {
 
+        this.userData = e
+        this.userDataId = this.userData[0].arrFavourite
+        this.apiService.get(this.domainProduct).subscribe(data => {
+          this.product = data;
+          this.showFavourite = true;
 
-    this.apiService.get(this.domainUser).subscribe(data => {
-      this.userData = data;
-      for (let i = 0; i < this.userData.length; i++) {
-        this.arrIdUser = this.userData[i]['arrFavourite'];
-        for (let i = 0; i < this.arrIdUser.length; i++) {
-          // console.log(this.arrIdUser[i]);
-          this.arrIdUser2 = this.arrIdUser[i];
-          console.log(this.arrIdUser2)
-
-        }
-      }
-    });
-    this.apiService.get(this.domainProduct).subscribe(data => {
-      this.product = data;
-      // console.log(this.arrIdUser2)
-
-    });
-
+          for (let i = 0; i < this.userData[0].arrFavourite.length; i++) {
+            console.log(this.userData[0].arrFavourite[i].id)
+            for (let j = 0; j < this.product.length; j++) {
+              if (this.userData[0].arrFavourite[i].id === this.product[j].id) {
+                this.product[j].favourite = true;
+                console.log(this.product[j].favourite)
+              }
+            }
+          }
+        });
+      })
+    }
   }
-
 
 }
 

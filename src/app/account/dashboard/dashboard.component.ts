@@ -1,3 +1,5 @@
+import { AuthService } from './../../core/service/auth/auth.service';
+import { ApiService } from './../../core/service/api/api.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/core/service/login/login.service';
@@ -9,19 +11,23 @@ import { LoginService } from 'src/app/core/service/login/login.service';
 })
 export class DashboardComponent implements OnInit {
 
-  userLocal: [];
+  profileUser: any;
+  email = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).email : false
 
   constructor(
     private router: Router,
-    private loginService: LoginService
+    private apiService: ApiService,
+    private auth: AuthService
   ) { }
 
   ngOnInit(): void {
-  }
-  get User(): any {
-    return JSON.parse(localStorage.getItem('currentUser'));
-  }
-  logout() {
-    this.loginService.logout();
+
+    this.auth.currentUser.subscribe(e => {
+      this.profileUser = e
+      console.log("DashboardComponent -> ngOnInit ->  e", e)
+      console.log(this.profileUser)
+    })
+
+
   }
 }

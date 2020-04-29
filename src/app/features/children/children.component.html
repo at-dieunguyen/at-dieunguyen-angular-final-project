@@ -1,11 +1,12 @@
 <div class="container">
   <h1 class="product-category">Child</h1>
   <div class="product-list">
-    <ul *ngFor="let pro of product">
+    <ul *ngFor="let pro of product" appFavorite [node]="pro">
       <li *ngIf="pro.category == 'child'">
         <img [src]="pro.img" width="200px" height="220px" alt=""><br>
         <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
         <p>Price: $ {{ pro.price }}</p>
+        <i *ngIf="showFavourite" class="far fa-heart like" [style.color]="pro.favourite ? 'red' : 'grey'"></i>
       </li>
     </ul>
   </div>

@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+.header-name {
+  margin-top: 5px;
+}
+.header-nav {
+  display: flex;
+  flex-wrap: wre;
+}
+.nav-link {
+  margin: 10px 0 0 0;
+}

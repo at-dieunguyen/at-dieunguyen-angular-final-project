@@ -1,8 +1,22 @@
 <div class="container">
-    <h1 class="product-category">Detail product</h1>
-    <img [src]="product.img" width="200px" height="220px" alt=""><br>
-    <p>Id product: {{ product.id }}</p>
-    <p>Name product: {{ product.name }}</p>
-    <p>Price: $ {{ product.price }}</p>
-    <p>Category: {{product.category}} clothes</p>
+  <div *ngFor="let pro of product" class="product-detail" appFavorite [node]="pro">
+    <div *ngIf="pro.id === productId.id">
+      <h1 class="product-title">Detail product</h1>
+      <img [src]="productId.img" width="200px" height="220px" alt=""><br>
+      <p>Id product: {{ productId.id }}</p>
+      <p>Name product: {{ productId.name }}</p>
+      <p>Price: $ {{ productId.price }}</p>
+      <p>Category: {{productId.category}} clothes</p>
+      <i *ngIf="showFavourite" class="far fa-heart like" [style.color]="pro.favourite? 'red' : 'grey'"></i>
+  </div>
+</div>
+  <h1 class="product-title">Sản phầm cùng danh mục</h1>
+  <div class="product-same">
+    <div *ngFor="let pro of product" class="product-same-category">
+      <div *ngIf="productId.category === pro.category">
+        <img [src]="pro.img" width="200px" height="220px" alt=""><br>
+        <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
+      </div>
+    </div>
+  </div>
 </div>

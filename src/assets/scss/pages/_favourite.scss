@@ -3,6 +3,7 @@
 }
 .fav-page {
   display: flex;
+  flex-wrap: wrap;
 }
 .fav-title {
   font-size: 30px;

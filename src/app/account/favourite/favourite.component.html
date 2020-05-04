@@ -1,8 +1,8 @@
 <h1 class="fav-title">Your favourite items</h1>
 <div class="fav-page">
 <div class="fav-for" *ngFor="let pro of product" appFavorite [node]="pro">
-  <div *ngFor="let user of userDataId" class="fav-items">
-    <div *ngIf="pro.id === user.id" class="fav-item">
+  <div *ngFor="let user of userData.arrFavourite" class="fav-items">
+    <div *ngIf="pro.id == user.id" class="fav-item">
       <img src="{{pro.img}}" alt="" width="220px" height="200px"><br>
       <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
       <p>Price: {{pro.price }}</p>

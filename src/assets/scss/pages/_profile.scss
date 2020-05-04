@@ -3,9 +3,10 @@
 }
 .form-profile {
   margin: 25px;
+  border: 1px solid #b1b5b1;
+  padding: 20px 10px;
 }
 .profile {
-  width: 600px;
   margin: 0 auto;
 }
 .profile-card {
@@ -13,4 +14,7 @@
   margin: 20px auto;
   border: 2px solid;
   padding: 30px;
+}
+.btn-profile {
+  margin: 15px 0;
 }

@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class FavouriteDirective {
   @Input() node: any;//get value of data object when click
-  domainProduct = 'http://localhost:3000/products';
-  domainUser = 'http://localhost:3001/users/';
+  domainProduct = 'https://5eaecc030605ed0016d2c4b0.mockapi.io/product';
+  domainUser = 'https://5eaecc030605ed0016d2c4b0.mockapi.io/user/';
   public userData: [];
   public product: [];
-  email = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).email : false
+  email = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).id : false
 
   constructor(
     private apiService: ApiService,
@@ -24,25 +24,31 @@ export class FavouriteDirective {
     if (this.email) {
       if (element.nodeName === 'I') {
 
-        this.apiService.get(this.domainUser + '/?email=' + this.email).subscribe(data => {
+        this.apiService.get(this.domainUser + '/' + this.email).subscribe(data => {
           this.userData = data
-          console.log(data[0].arrFavourite)
-          let index = data[0].arrFavourite.findIndex(element => element.id === this.node.id);
+          console.log(data);
+          data.arrFavourite = JSON.parse(data.arrFavourite);
+          console.log(data);
+
+
+          let index = data.arrFavourite.findIndex(element => element.id == this.node.id);
           console.log(index);
 
           this.node.favourite = !this.node.favourite;
           if (this.node.favourite === true) {
             if (index == -1) {
-              data[0].arrFavourite.push(this.node);
+              data.arrFavourite.push(this.node);
               // console.log(this.userData[0].arrFavourite);
               alert('Item has added to favourite!')
-              this.apiService.put(this.domainUser + '' + data[0].id, data[0])
+              this.apiService.putFa(this.domainUser + '' + data.id, data)
             }
           }
           else {
-            data[0].arrFavourite.splice(index, 1);
+            data.arrFavourite.splice(index, 1);
+            console.log(data.arrFavourite);
+
             alert('Item has removed to favourite!')
-            this.apiService.put(this.domainUser + '' + data[0].id, data[0])
+            this.apiService.putFa(this.domainUser + '' + data.id, data)
           }
 
         })

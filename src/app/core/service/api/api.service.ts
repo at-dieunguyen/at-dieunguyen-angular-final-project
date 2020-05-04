@@ -21,7 +21,7 @@ export class ApiService {
     );
   }
   getId(id: number): Observable<any> {
-    return this.http.get("http://localhost:3000/products/" + id)
+    return this.http.get("https://5eaecc030605ed0016d2c4b0.mockapi.io/product/" + id)
 
   }
   /**
@@ -29,11 +29,14 @@ export class ApiService {
   * @param url : path from ENDPOINT
   * @param params : ex: {key: value}
   */
-  post(url: string, params?: any): Observable<any> {
-    return this.http.post(url, params).pipe(
-      catchError(this.handleError)
-    );
+
+  post(url: string, params: any) {
+    const axios = require('axios');
+    axios.post(url, params).catch(error => {
+      console.log(error);
+    });
   }
+
 
   /**
   * Put api
@@ -46,7 +49,15 @@ export class ApiService {
       console.log(error);
     });
   }
+  putFa(url: string, params: any) {
+    const axios = require('axios');
+    params.arrFavourite = JSON.stringify(params.arrFavourite);
+    console.log(url,  JSON.stringify(params.arrFavourite));
 
+    axios.put(url, params).catch(error => {
+      console.log(error);
+    });
+  }
   /**
   * Get file from assets folder
   * @param url : path from assets folder

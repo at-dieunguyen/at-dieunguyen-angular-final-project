@@ -1,3 +1,4 @@
+import { AuthService } from './../../core/service/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import { ApiService } from '../../core/service/api/api.service';
@@ -9,7 +10,7 @@ export interface CurrentUser {
   password: string;
   firstName: string;
   lastName: string;
-  arrFavouritve: [];
+  arrFavourite: '';
   id: number
 }
 
@@ -20,7 +21,8 @@ export interface CurrentUser {
 })
 export class LoginComponent implements OnInit {
 
-  domain = 'http://localhost:3001/users';
+
+  domain = 'https://5eaecc030605ed0016d2c4b0.mockapi.io/user';
   loginForm: FormGroup;
   userData: [];
   currentUser: CurrentUser;
@@ -30,7 +32,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private apiService: ApiService,
     private router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private auth: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -39,7 +42,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
 
-    this.apiService.get(this.domain,'').subscribe(data => {
+    this.apiService.get(this.domain, '').subscribe(data => {
       this.userData = data;
     }, err => {
       console.log(err);
@@ -48,13 +51,13 @@ export class LoginComponent implements OnInit {
     console.log(this.loginService.isLogin);
   }
   login() {
-    console.log(this.loginForm);
+    // console.log(this.loginForm);
     this.currentUser = {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password,
       firstName: '',
       lastName: '',
-      arrFavouritve: [],
+      arrFavourite: '',
       id: 0,
     };
 
@@ -62,14 +65,14 @@ export class LoginComponent implements OnInit {
       if (this.userData[i]['email'] === this.currentUser.email && this.userData[i]['password'] === this.currentUser.password) {
         this.currentUser.firstName = this.userData[i]['firstName'];
         this.currentUser.lastName = this.userData[i]['lastName'];
-        this.currentUser.arrFavouritve = this.userData[i]['arrFavourite'];
+        this.currentUser.arrFavourite = this.userData[i]['arrFavourite'];
         this.currentUser.id = this.userData[i]['id'];
 
         localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
         let status = true
         // this.loginService.isLogin =true;
         this.loginService.changeSatusLogin(status);
-
+        this.auth.changeUser(this.currentUser)
         this.router.navigate(['/dashboard']);
       }
       else {

@@ -9,34 +9,31 @@ import { ApiService } from 'src/app/core/service/api/api.service';
 export class FavouriteComponent implements OnInit {
   @Input()
 
-  domainUser = 'http://localhost:3001/users';
-  domainProduct = 'http://localhost:3000/products';
+  domainUser = 'https://my-json-server.typicode.com/at-dieunguyen/json-server-api/users';
+  domainProduct = 'https://my-json-server.typicode.com/at-dieunguyen/json-server-api/products';
   userData: any;
-  userDataId: any;
   product: any;
   showFavourite = false;
-  email = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).email : false
+  id = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).id : false
   constructor(
     private apiService: ApiService
   ) { }
 
   ngOnInit(): void {
 
-    if (this.email) {
-      this.apiService.get(this.domainUser + '/?email=' + this.email).subscribe(e => {
+    if (this.id) {
 
+      this.apiService.get('https://5eaecc030605ed0016d2c4b0.mockapi.io/user/' + this.id).subscribe(e => {
         this.userData = e
-        this.userDataId = this.userData[0].arrFavourite
+        this.userData.arrFavourite  = JSON.parse(this.userData.arrFavourite)
         this.apiService.get(this.domainProduct).subscribe(data => {
           this.product = data;
           this.showFavourite = true;
 
-          for (let i = 0; i < this.userData[0].arrFavourite.length; i++) {
-            console.log(this.userData[0].arrFavourite[i].id)
+          for (let i = 0; i < this.userData.arrFavourite.length; i++) {
             for (let j = 0; j < this.product.length; j++) {
-              if (this.userData[0].arrFavourite[i].id === this.product[j].id) {
+              if (this.userData.arrFavourite[i].id == this.product[j].id) {
                 this.product[j].favourite = true;
-                console.log(this.product[j].favourite)
               }
             }
           }

@@ -12,7 +12,7 @@ import { LoginService } from 'src/app/core/service/login/login.service';
 export class DashboardComponent implements OnInit {
 
   profileUser: any;
-  email = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).email : false
+  // email = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).email : false
 
   constructor(
     private router: Router,
@@ -23,9 +23,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
 
     this.auth.currentUser.subscribe(e => {
-      this.profileUser = e
-      console.log("DashboardComponent -> ngOnInit ->  e", e)
-      console.log(this.profileUser)
+      this.profileUser = e;
     })
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/core/service/api/api.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -18,43 +18,42 @@ export class DetailComponent implements OnInit {
   };
   product: any;
   showFavourite = false;
-  public user: any
-  domainProduct = 'http://localhost:3000/products';
-  domainUser = 'http://localhost:3001/users';
+  public userData: any;
+  id = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).id : false
+  domainUser = 'https://5eaecc030605ed0016d2c4b0.mockapi.io/user';
+  domainProduct = 'https://5eaecc030605ed0016d2c4b0.mockapi.io/product';
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
-    private route2: Router
   ) { }
 
   ngOnInit(): void {
     const productId = +this.route.snapshot.paramMap.get('id');
 
     this.apiService.getId(productId).subscribe(data => this.productId = data);
-    // this.apiService.get(this.domainProduct).subscribe(data => this.product = data);
 
-    this.apiService.get(this.domainUser).subscribe(data => {
-      this.user = data[0].arrFavourite
-      this.apiService.get(this.domainProduct).subscribe(data => {
-        this.product = data;
-        if (localStorage.getItem('currentUser')) {
+    if (this.id) {
+      this.apiService.get(this.domainUser + '/' + this.id).subscribe(e => {
+        this.userData = e
+        this.userData.arrFavourite = JSON.parse(this.userData.arrFavourite);//parse arrFa string to array
+        this.apiService.get(this.domainProduct).subscribe(data => {
+          this.product = data;
           this.showFavourite = true;
 
-          for (let i = 0; i < this.user.length; i++) {
-
+          for (let i = 0; i < this.userData.arrFavourite.length; i++) {
             for (let j = 0; j < this.product.length; j++) {
-
-              if (this.user[i].id === this.product[j].id) {
+              if (this.userData.arrFavourite[i].id == this.product[j].id) {
                 this.product[j].favourite = true;
-                console.log(this.product[j]['favourite'])
               }
             }
           }
-        }
 
-        else {
-        }
-      });
-    })
+        });
+      })
+    }
+    else {
+      this.apiService.get(this.domainProduct).subscribe(data => this.product = data);
+    }
+
   }
 }

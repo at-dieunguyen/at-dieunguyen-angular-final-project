@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../core/service/api/api.service';
 import { Router } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
 
 export interface User {
   firstName: string;
   lastName: string;
   email: string;
   password: string;
-  arrFavouritve: Array<any>;
+  arrFavourite: string
 }
 
 @Component({
@@ -19,7 +18,7 @@ export interface User {
 })
 export class RegisterComponent implements OnInit {
 
-  domain = 'http://localhost:3001/users';
+  domain = 'https://5eaecc030605ed0016d2c4b0.mockapi.io/user';
   data = [];
   registerForm: FormGroup;
   user: User;
@@ -40,6 +39,7 @@ export class RegisterComponent implements OnInit {
     }, {
       validators: this.matchPasswords
     });
+
   }
 
   matchPasswords(group: FormGroup) {
@@ -55,15 +55,10 @@ export class RegisterComponent implements OnInit {
       lastName: this.registerForm.value.lastName,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
-      arrFavouritve: []
+      arrFavourite: '[]'
     };
-    console.log(this.user);
-    this.apiService.post(this.domain, this.user).subscribe(e => {
-      console.log(e);
-    }, err => {
-      console.log(err);
-    }
-    );
+    // console.log(this.user);
+    this.apiService.post(this.domain, this.user)
     this.router.navigate(['/login']);
 
   }

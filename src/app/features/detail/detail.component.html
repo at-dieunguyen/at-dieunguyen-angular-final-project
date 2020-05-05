@@ -2,7 +2,7 @@
   <h1 class="product-title">Detail product</h1>
   <div *ngFor="let pro of product" class="product-detail" appFavorite [node]="pro">
     <div *ngIf="pro.id == productId.id">
-      <img [src]="productId.img" width="200px" height="220px" alt="" /><br />
+      <img [src]="productId.img" width="235px" height="235px" alt="" /><br />
       <p>Id product: {{ productId.id }}</p>
       <p>Name product: {{ productId.name }}</p>
       <p>Price: $ {{ productId.price }}</p>

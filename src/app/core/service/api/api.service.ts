@@ -20,10 +20,10 @@ export class ApiService {
       catchError(this.handleError)
     );
   }
-  getId(id: number): Observable<any> {
-    return this.http.get("https://5eaecc030605ed0016d2c4b0.mockapi.io/product/" + id)
 
-  }
+  getId(url: string, id: number): Observable<any> {
+      return this.http.get(url + id)
+    }
   /**
   * Post api
   * @param url : path from ENDPOINT

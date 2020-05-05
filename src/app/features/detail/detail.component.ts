@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/core/service/api/api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -16,21 +16,27 @@ export class DetailComponent implements OnInit {
     img: '',
     price: ''
   };
+
   product: any;
   showFavourite = false;
   public userData: any;
+  idProduct: number;
   id = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).id : false
   domainUser = 'https://5eaecc030605ed0016d2c4b0.mockapi.io/user';
   domainProduct = 'https://5eaecc030605ed0016d2c4b0.mockapi.io/product';
   constructor(
     private apiService: ApiService,
-    private route: ActivatedRoute,
+    private router: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
-    const productId = +this.route.snapshot.paramMap.get('id');
 
-    this.apiService.getId(productId).subscribe(data => this.productId = data);
+    this.router.params.subscribe(e => { //theo doi thay doi theo id
+    this.idProduct = e.id;
+    this.apiService.getId(this.domainProduct + '/', this.idProduct).subscribe(data => { //product thay doi theo id
+      this.productId = data
+    });
+    })
 
     if (this.id) {
       this.apiService.get(this.domainUser + '/' + this.id).subscribe(e => {
@@ -54,6 +60,6 @@ export class DetailComponent implements OnInit {
     else {
       this.apiService.get(this.domainProduct).subscribe(data => this.product = data);
     }
-
   }
+
 }

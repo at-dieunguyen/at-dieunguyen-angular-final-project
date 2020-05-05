@@ -22,8 +22,8 @@ export class HeaderComponent implements OnInit {
   logOut(){
     let stautus = false;
     this.loginService.changeSatusLogin(stautus);
-    localStorage.removeItem('currentUser')
     this.auth.changeUser({})
+    localStorage.removeItem('currentUser')
     this.route.navigateByUrl('/home')
   }
 }

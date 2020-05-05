@@ -59,7 +59,10 @@ export class RegisterComponent implements OnInit {
     };
     // console.log(this.user);
     this.apiService.post(this.domain, this.user)
+    setTimeout(() => {
     this.router.navigate(['/login']);
+
+    }, 1500);
 
   }
 }

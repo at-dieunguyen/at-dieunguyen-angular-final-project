@@ -26,6 +26,8 @@ export class HomeComponent implements OnInit {
         this.userData.arrFavourite = JSON.parse(this.userData.arrFavourite);//parse arrFa string to array
         this.apiService.get(this.domainProduct).subscribe(data => {
           this.product = data;
+          console.log(this.product);
+
           this.showFavourite = true;
 
           for (let i = 0; i < this.userData.arrFavourite.length; i++) {

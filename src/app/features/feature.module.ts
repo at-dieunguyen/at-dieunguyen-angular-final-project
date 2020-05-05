@@ -13,11 +13,11 @@ import { HomeModule } from './home/home.module';
   declarations: [],
   imports: [
     CommonModule,
+    HomeModule,
     WomenModule,
     ManModule,
     ChildrenModule,
     DetailModule,
-    HomeModule,
     HttpClientModule,
   ],
   exports:[],

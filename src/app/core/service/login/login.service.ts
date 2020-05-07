@@ -17,4 +17,5 @@ export class LoginService {
   changeSatusLogin(status: boolean) {
     this.isLogin.next(status);
   }
+
 }

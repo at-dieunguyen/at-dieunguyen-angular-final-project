@@ -1,19 +1,31 @@
-<div class="container page-main">
+<div class="container">
   <a class="product-category">Man</a>
-  <div class="row product-list">
-    <ul *ngFor="let pro of product" class="col-md-3" appFavorite [node]="pro">
-      <div>
-        <li *ngIf="pro.category == 'man'">
-          <img [src]="pro.img" class="img-product" alt="" /><br />
-          <a routerLink="/detail/{{ pro.id }}">Name product: {{ pro.name }}</a>
-          <p>Price: $ {{ pro.price }}</p>
-          <i
-            *ngIf="showFavourite"
-            class="far fa-heart like"
-            [style.color]="pro.favourite ? 'red' : 'grey'"
-          ></i>
-        </li>
+  <div class="row page-main">
+    <div class="portfolio-page col-sm-3" *ngFor="let pro of product" appFavorite [node]="pro">
+      <div *ngIf="pro.category=='man'" class="image-wrapper">
+        <div class="portfolio-image dexp-image relative">
+          <div class="carousel-item">
+            <img src={{pro.img}} alt="">
+          </div>
+        </div>
       </div>
-    </ul>
+      <div *ngIf="pro.category=='man'" class="portfolio-content">
+        <h5 class="portfolio-title">
+          <a routerLink="/detail/{{pro.id}}" hreflang="en">{{pro.name}}</a>
+        </h5>
+        <div class="portfolio-description">
+          <p>{{pro.price}}</p>
+        </div>
+        <div *ngIf="showFavourite">
+          <div class="overlay">
+            <div class="overlay-inner">
+              <div>
+                <i class="portfolio-icon far fa-heart like" [style.color]="pro.favourite ? 'red' :'grey'"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

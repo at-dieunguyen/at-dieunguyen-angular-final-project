@@ -1,19 +1,33 @@
-<div class="container">
-  <header class="bg-white border-bottom">
-    <div class="header-name">
-      <a class="my-0 mr-md-auto font-weight-normal" routerLink="/home"><img src="assets/img/log02.png"
-          width="200px" height="60px" class="img-logo" alt=""></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <!-- <a class="navbar-brand" href="#">Hidden brand</a> -->
+      <img src="./assets/img/logo2.png" class="img-logo" alt="">
+      <ul class="navbar-nav ml-auto item-list">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/women">Women</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/man">Man</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/children">Children</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a class="btn btn-outline-primary" *ngIf="!isLogin" routerLink="/login">Log in</a>
+          <a class="btn btn-outline-primary" *ngIf="isLogin" (click)="logOut()">Log out</a>
+        </li>
+      </ul>
     </div>
-    <div class="header-nav">
-      <nav class="nav-link">
-        <a class="p-2 text-dark" routerLink="/home">Home</a>
-        <a class="p-2 text-dark" routerLink="/women">Women</a>
-        <a class="p-2 text-dark" routerLink="/man">Man</a>
-        <a class="p-2 text-dark" routerLink="/children">Children</a>
-        <a class="p-2 text-dark" routerLink="/dashboard">Dashboard</a>
-        <a class="btn btn-outline-primary" *ngIf="!isLogin" routerLink="/login">Log in</a>
-        <a class="btn btn-outline-primary" *ngIf="isLogin" (click)="logOut()">Log out</a>
-      </nav>
-    </div>
-  </header>
-</div>
+  </div>
+</nav>

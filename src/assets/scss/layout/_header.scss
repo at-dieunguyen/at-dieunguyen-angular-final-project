@@ -5,12 +5,11 @@ header .container {
   display: flex;
 }
 .img-logo {
-  margin-top: 5px;
+  height: 85px;
+  width: 110px;
+  margin: -12px 0px;
 }
 header {
   display: flex;
   justify-content: space-between;
-}
-.nav-link {
-  margin: 10px 0 0 0;
 }

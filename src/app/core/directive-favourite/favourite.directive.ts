@@ -12,7 +12,7 @@ export class FavouriteDirective {
   domainUser = 'https://5eaecc030605ed0016d2c4b0.mockapi.io/user/';
   public userData: [];
   public product: [];
-  email = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).id : false
+  id = JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).id : false
 
   constructor(
     private apiService: ApiService,
@@ -21,33 +21,23 @@ export class FavouriteDirective {
 
   @HostListener('click', ['$event.target'])
   onClick(element: any) {
-    if (this.email) {
+    if (this.id) {
       if (element.nodeName === 'I') {
 
-        this.apiService.get(this.domainUser + '/' + this.email).subscribe(data => {
+        this.apiService.get(this.domainUser + '/' + this.id).subscribe(data => {
           this.userData = data
           console.log(data);
           data.arrFavourite = JSON.parse(data.arrFavourite);
-          console.log(data);
-
-
           let index = data.arrFavourite.findIndex(element => element.id == this.node.id);
-          console.log(index);
-
           this.node.favourite = !this.node.favourite;
           if (this.node.favourite === true) {
             if (index == -1) {
               data.arrFavourite.push(this.node);
-              // console.log(this.userData[0].arrFavourite);
-              alert('Item has added to favourite!')
               this.apiService.putFa(this.domainUser + '' + data.id, data)
             }
           }
           else {
             data.arrFavourite.splice(index, 1);
-            console.log(data.arrFavourite);
-
-            alert('Item has removed to favourite!')
             this.apiService.putFa(this.domainUser + '' + data.id, data)
           }
 

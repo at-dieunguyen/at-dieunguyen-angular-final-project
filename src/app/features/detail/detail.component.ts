@@ -18,6 +18,7 @@ export class DetailComponent implements OnInit {
   };
 
   product: any;
+  productAll:any;
   showFavourite = false;
   public userData: any;
   idProduct: number;
@@ -32,20 +33,29 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
 
     this.router.params.subscribe(e => { //theo doi thay doi theo id
-    this.idProduct = e.id;
-    this.apiService.getId(this.domainProduct + '/', this.idProduct).subscribe(data => { //product thay doi theo id
-      this.productId = data
-    });
+      this.idProduct = e.id;
+      this.apiService.getId(this.domainProduct + '/', this.idProduct).subscribe(data => { //product thay doi theo id
+        this.productId = data
+      });
     })
-
     if (this.id) {
       this.apiService.get(this.domainUser + '/' + this.id).subscribe(e => {
         this.userData = e
         this.userData.arrFavourite = JSON.parse(this.userData.arrFavourite);//parse arrFa string to array
         this.apiService.get(this.domainProduct).subscribe(data => {
-          this.product = data;
+          this.productAll = data
+        })
+        this.apiService.get(this.domainProduct).subscribe(data => {
+          if (this.productId.category == 'women') {
+            this.product = data.splice(0, 4);
+          }
+          if (this.productId.category == 'man') {
+            this.product = data.splice(9, 4);
+          }
+          if (this.productId.category == 'child') {
+            this.product = data.splice(17, 4);
+          }
           this.showFavourite = true;
-
           for (let i = 0; i < this.userData.arrFavourite.length; i++) {
             for (let j = 0; j < this.product.length; j++) {
               if (this.userData.arrFavourite[i].id == this.product[j].id) {
@@ -58,8 +68,20 @@ export class DetailComponent implements OnInit {
       })
     }
     else {
-      this.apiService.get(this.domainProduct).subscribe(data => this.product = data);
+      this.apiService.get(this.domainProduct).subscribe(data => {
+        this.productAll = data
+      })
+      this.apiService.get(this.domainProduct).subscribe(data => {
+        if (this.productId.category == 'women') {
+          this.product = data.splice(0, 4);
+        }
+        if (this.productId.category == 'man') {
+          this.product = data.splice(9, 4);
+        }
+        if (this.productId.category == 'child') {
+          this.product = data.splice(17, 4);
+        }
+      })
     }
   }
-
 }

@@ -43,5 +43,4 @@ export class ManComponent implements OnInit {
       this.apiService.get(this.domainProduct).subscribe(data => this.product = data);
     }
   }
-
-}
+  }

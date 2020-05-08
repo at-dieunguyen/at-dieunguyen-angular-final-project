@@ -28,11 +28,9 @@ ngOnInit(): void {
         this.showFavourite = true;
 
         for (let i = 0; i < this.userData.arrFavourite.length; i++) {
-          console.log(this.userData.arrFavourite[i].id)
           for (let j = 0; j < this.product.length; j++) {
             if (this.userData.arrFavourite[i].id == this.product[j].id) {
               this.product[j].favourite = true;
-              console.log(this.product[j].favourite)
             }
           }
         }

@@ -22,8 +22,8 @@ export class ApiService {
   }
 
   getId(url: string, id: number): Observable<any> {
-      return this.http.get(url + id)
-    }
+    return this.http.get(url + id)
+  }
   /**
   * Post api
   * @param url : path from ENDPOINT
@@ -52,7 +52,7 @@ export class ApiService {
   putFa(url: string, params: any) {
     const axios = require('axios');
     params.arrFavourite = JSON.stringify(params.arrFavourite);
-    console.log(url,  JSON.stringify(params.arrFavourite));
+    console.log(url, JSON.stringify(params.arrFavourite));
 
     axios.put(url, params).catch(error => {
       console.log(error);

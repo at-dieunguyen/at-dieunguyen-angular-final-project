@@ -5,11 +5,22 @@
 .product-same-category {
   width: 25%;
 }
-.product-detail {
-  text-align: center;
+.detail-item {
+  display: flex;
 }
-.product-title {
-  font-size: 25px;
-  text-align: center;
-  margin: 20px 10px;
+.fa, .fas {
+  font-weight: 900;
+  color: #e8e83c;
+}
+.item-detail {
+  margin-left: 15px;
+}
+.item-favourite {
+  display: flex;
+}
+.icon-fav {
+  margin: 4px 10px;
+}
+.item-name {
+  font-size: 35px;
 }

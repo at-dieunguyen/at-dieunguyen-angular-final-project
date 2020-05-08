@@ -1,7 +1,7 @@
 <div class="container">
   <p class="dashboard-title">Welcome to your dashboard: {{profileUser?.lastName}}</p>
   <div class="row">
-    <div class="col-3">
+    <div class="col-md-3 col-sm-12 col-xs-12">
       <div class="list-group" id="list-tab" role="tablist">
         <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list"
           routerLink="/dashboard/profile" role="tab" aria-controls="home">Profile</a>
@@ -9,7 +9,7 @@
           routerLink="/dashboard/favourite" role="tab" aria-controls="profile">Favourite</a>
       </div>
     </div>
-    <div class="col-9">
+    <div class="col-md-9 col-sm-12 col-xs-12">
       <router-outlet></router-outlet>
     </div>
   </div>

@@ -18,7 +18,7 @@ export class DetailComponent implements OnInit {
   };
 
   product: any;
-  productAll:any;
+  productAll: any;
   showFavourite = false;
   public userData: any;
   idProduct: number;

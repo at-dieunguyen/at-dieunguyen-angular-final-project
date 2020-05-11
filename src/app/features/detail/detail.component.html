@@ -35,15 +35,6 @@
         <div class="portfolio-description">
           <p>{{pro.price}}</p>
         </div>
-        <div *ngIf="showFavourite">
-          <div class="overlay">
-            <div class="overlay-inner">
-              <div>
-                <i class="portfolio-icon far fa-heart like" [style.color]="pro.favourite ? 'red' :'grey'"></i>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

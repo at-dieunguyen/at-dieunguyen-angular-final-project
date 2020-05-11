@@ -24,8 +24,6 @@ export class DashboardComponent implements OnInit {
 
     this.auth.currentUser.subscribe(e => {
       this.profileUser = e;
-    })
-
-
+    });
   }
 }

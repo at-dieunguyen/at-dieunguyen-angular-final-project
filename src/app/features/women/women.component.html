@@ -1,0 +1,31 @@
+<div class="container">
+  <a class="product-category">Women</a>
+  <div class="row page-main">
+    <div class="portfolio-page col-lg-3 col-md-3 col-sm-6 col-xs-12" *ngFor="let pro of product" appFavorite [node]="pro">
+      <div *ngIf="pro.category=='women'" class="image-wrapper">
+        <div class="portfolio-image dexp-image relative">
+          <div class="carousel-item">
+            <a routerLink="/detail/{{pro.id}}"><img src={{pro.img}} alt=""></a>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="pro.category=='women'" class="portfolio-content">
+        <h5 class="portfolio-title">
+          <a routerLink="/detail/{{pro.id}}" hreflang="en">{{pro.name}}</a>
+        </h5>
+        <div class="portfolio-description">
+          <p>{{pro.price}}</p>
+        </div>
+        <div *ngIf="showFavourite">
+          <div class="overlay">
+            <div class="overlay-inner">
+              <div>
+                <i class="portfolio-icon far fa-heart like" [style.color]="pro.favourite ? 'red' :'grey'"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

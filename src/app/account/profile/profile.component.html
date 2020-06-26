@@ -1,0 +1,14 @@
+<h1 class="profile-title">Your profile</h1>
+<div class="row">
+  <div class="col">
+  <form class="form-profile" #form="ngForm" (ngSubmit)="onSubmitForm(form)">
+    <label for="">First Name</label>
+    <input name="fName" type="text" class="form-control profile" [ngModel]="profileUser?.firstName" />
+    <label for="">Last Name</label>
+    <input name="lName" type="text" class="form-control profile" [ngModel]="profileUser?.lastName" />
+    <button type="submit" class="btn btn-primary btn-profile">
+      Edit profile
+    </button>
+  </form>
+  </div>
+</div>
